@@ -23,8 +23,8 @@
           display: flex;
        }
          img{
-            widht: 300px;
-            height: 300px;
+            widht: 200px;
+            height: 200px;
         }
         .artigo-autor {
             font-weight: bold;
@@ -46,14 +46,17 @@
      </div>
     </main>
 </body>
-<script><
-    const botao = document.querySelector("button");
-    botao.addEventListener("click", botaoClicado);
-
-    function botaoClicado(){
+<script>
+    const botoes = document.querySelectorAll("button");
+    
+    botoes.forEach(botao => {
+      botao.addEventListener("click", botaoClicado);
+    };
+    
+    function botaoClicado(event) {
         console.log("fui clicado");
-        let texto = botao.querySelector("span");
+        let texto = event.currentTarget.querySelector("span");
         texto.textContent++;
     }
-/script>
+</script>
 </html>
